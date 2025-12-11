@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/bestprovider"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/longitude"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/latitude"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="TextView" />
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/osm"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <TextView
+            android:id="@+id/text_gps"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="refresh to check gps status"/>
+
+        <TextView
+            android:id="@+id/text_network"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="refresh to check network status"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/archival_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </ScrollView>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@id/layout2"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+            <TextView
+                android:text="wyslij sms"
+                android:padding="8dp"
+                android:textColor="@color/fab_text"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColorHighlight="@color/fab_text"
+                android:layout_gravity="center_vertical"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSendSms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_sms_24"
+                app:fabSize="mini"
+                app:elevation="0dp"
+                android:backgroundTint="@color/fab_bg"
+                app:shapeAppearanceOverlay="@style/fab_circle"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@id/layout3"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+            <TextView
+                android:text="zapisz kordynaty"
+                android:padding="8dp"
+                android:textColor="@color/fab_text"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSaveCordinates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_download_24"
+                app:fabSize="mini"
+                app:shapeAppearanceOverlay="@style/fab_circle"
+                android:backgroundTint="@color/fab_bg"
+                app:elevation="0dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@id/layout4"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+            <TextView
+                android:text="share ccordinates"
+                android:padding="8dp"
+                android:textColor="@color/fab_text"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabShareCordinates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_share_24"
+                app:fabSize="mini"
+                app:elevation="0dp"
+                app:shapeAppearanceOverlay="@style/fab_circle"
+                android:backgroundTint="@color/fab_bg"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@id/mainFab"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+            <TextView
+                android:text="pogoda"
+                android:padding="8dp"
+                android:textColor="@color/fab_text"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_gps_fixed_24"
+                app:fabSize="mini"
+                app:elevation="0dp"
+                app:shapeAppearanceOverlay="@style/fab_circle"
+                android:backgroundTint="@color/fab_bg"/>
+        </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        app:shapeAppearanceOverlay="@style/fab_circle"
+        android:backgroundTint="@color/primary"
+        android:src="@drawable/fab_plus"/>
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
