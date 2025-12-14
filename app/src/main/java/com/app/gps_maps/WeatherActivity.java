@@ -62,8 +62,8 @@ public class WeatherActivity extends AppCompatActivity {
                     if(response.isSuccessful()){
                         weatherResponse = response.body();
                         if(weatherResponse != null && weatherResponse.getHourly() != null){
-                            listUpdate(pastDays+1);
-                            final int[] currentDay = {pastDays+1};
+                            listUpdate(pastDays);
+                            final int[] currentDay = {pastDays};
                             findViewById(R.id.nextDay).setOnClickListener(v->{
                                 Log.d("asdhjkbasd", "fetchTemperature: "+currentDay[0]+" "+dayCount);
                                 if(currentDay[0] < dayCount-1) {
